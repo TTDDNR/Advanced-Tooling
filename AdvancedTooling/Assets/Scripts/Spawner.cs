@@ -10,12 +10,13 @@ public class Spawner : MonoBehaviour
     private int Spawned;
     [SerializeField]
     private GameObject toSpawn;
-    void Update()
+    void FixedUpdate()
     {
         if (amountToSpawn > 0 && Spawned < amountToSpawn)
         {
-                Instantiate(toSpawn);
-                Spawned++;
+            var spawn = Instantiate(toSpawn);
+            spawn.transform.position = transform.position;
+            Spawned++;
         }
     }
 }

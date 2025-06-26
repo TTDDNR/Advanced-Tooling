@@ -14,9 +14,18 @@ public class Spawner : MonoBehaviour
     {
         if (amountToSpawn > 0 && Spawned < amountToSpawn)
         {
-            var spawn = Instantiate(toSpawn);
-            spawn.transform.position = transform.position;
-            Spawned++;
+            for (int i = 0; 100 >= i; i++)
+            {
+                for (int j = 0; 100 >= j; j++)
+                {
+                    if (Spawned < amountToSpawn)
+                    {
+                        var spawn = Instantiate(toSpawn);
+                        spawn.transform.position = transform.position + new Vector3(i, 0, j);
+                        Spawned++;
+                    }
+                }
+            }
         }
     }
 }
